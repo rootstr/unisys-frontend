@@ -1,0 +1,174 @@
+.base-button {
+  --_btn-background: var(--btn-background, #818cf8);
+  --_btn-color: var(--btn-color, #f9fafb);
+  --_btn-ring-offset-width: var(--btn-ring-offset-width, 0rem);
+  --_btn-ring-offset-color: var(--btn-ring-offset-color);
+  --_btn-ring-width: var(--btn-ring-width);
+  --_btn-ring-color: var(--btn-ring-color);
+  --_btn-font-weight: var(--btn-font-weight, normal);
+  --_btn-font-size: var(--btn-font-size, .875rem);
+  --_btn-border-radius: var(--btn-border-radius, 0rem);
+  --_btn-border: var(--btn-border, .0625rem solid transparent);
+  display: flex;
+  user-select: none;
+  cursor: default;
+  justify-content: center;
+  align-items: center;
+  padding: .3125rem .625rem;
+  border: var(--_btn-border);
+  font-size: var(--_btn-font-size);
+  font-weight: var(--_btn-font-weight);
+  border-radius: var(--_btn-border-radius);
+  background-color: var(--_btn-background);
+  color: var(--_btn-color);
+  transition: background-color 200ms ease;
+}
+
+.base-button__spin-icon {
+  margin-left: .3125rem;
+  font-size: var(--_btn-font-size);
+  animation: loading-animation 1s linear infinite;
+}
+
+/* Primary button styles */
+
+.base-button--primary {
+  --btn-background: var(--uns-indigo-400);
+  --btn-color: var(--uns-gray-50);
+  --btn-ring-color: var(--uns-indigo-300);
+  --btn-ring-offset-color: var(--uns-light);
+}
+
+/* Secondary button styles */
+
+.base-button--secondary {
+  --btn-background: var(--uns-gray-400);
+  --btn-color: var(--uns-gray-50);
+  --btn-ring-color: var(--uns-gray-400);
+  --btn-ring-offset-color: var(--uns-light);
+}
+
+/* Outline button styles */
+
+.base-button--outline {
+  --btn-background: var(--uns-light);
+  --btn-color: var(--uns-indigo-400);
+  --btn-ring-color: var(--uns-indigo-400);
+  --btn-ring-offset-color: var(--uns-light);
+  --btn-ring-offset-width: .125rem;
+  --btn-ring-width: .0625rem;
+}
+
+/* Danger button styles */
+
+.base-button--danger {
+  --btn-color: var(--uns-gray-50);
+  --btn-background: var(--uns-red-400);
+  --btn-ring-offset-color: var(--uns-light);
+  --btn-ring-color: var(--uns-red-300);
+}
+
+body[class~="dark"] .base-button--secondary,
+body[class~="dark"] .base-button--primary,
+body[class~="dark"] .base-button--outline,
+body[class~="dark"] .base-button--danger {
+  --btn-ring-offset-color: var(--uns-dark);
+}
+
+body[class~="dark"] .base-button--outline {
+  --btn-background: var(--uns-dark);
+}
+
+.base-button--outline,  /* outline button with ring */
+.base-button--ring {
+  box-shadow: 0 0 0 var(--_btn-ring-offset-width) var(--_btn-ring-offset-color), 0 0 0 calc(var(--_btn-ring-offset-width) + var(--_btn-ring-width)) var(--_btn-ring-color);
+}
+
+/* Ring styles */
+
+.base-button--ring-sm {
+  --btn-ring-width: .125rem;
+}
+
+.base-button--ring-md {
+  --btn-ring-width: .25rem;
+}
+
+.base-button--ring-lg {
+  --btn-ring-width: .375rem;
+}
+
+/* Ring offset styles */
+
+.base-button--ring-offset-sm {
+  --btn-ring-offset-width: .125rem;
+}
+
+.base-button--ring-offset-md {
+  --btn-ring-offset-width: .1875rem;
+}
+
+.base-button--ring-offset-lg {
+  --btn-ring-offset-width: .25rem;
+}
+
+/* Border styles */
+
+.base-button--rounded-sm {
+  --btn-border-radius: .125rem;
+}
+
+.base-button--rounded-md {
+  --btn-border-radius: .375rem;
+}
+
+.base-button--rounded-lg {
+  --btn-border-radius: .5rem;
+}
+
+.base-button--rounded-full {
+  --btn-border-radius: 999rem;
+}
+
+/* Button font styles */
+
+.base-button--font-normal {
+  --btn-font-weight: normal;
+}
+
+.base-button--font-bold {
+  --btn-font-weight: bold;
+}
+
+.base-button--size-sm {
+  --btn-font-size: .875rem;
+}
+
+.base-button--size-base {
+  --btn-font-size: 1rem;
+}
+
+.base-button--size-lg {
+  --btn-font-size: 1.125rem;
+}
+
+/* Button hover styles */
+
+.base-button--primary:hover {
+  --btn-background: var(--uns-indigo-500);
+}
+
+@media not all and (min-width: 640px) {
+  .base-button {
+    font-size: 1.2rem;
+  }
+}
+
+@keyframes loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

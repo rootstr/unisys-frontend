@@ -1,0 +1,25 @@
+.dropdown-item {
+  --_dropdown-item-background: var(--dropdown-item-background, #d1d5db);
+  user-select: none;
+  border: .0625rem solid transparent;
+  border-radius: .375rem;
+  transition: background-color 200ms ease-in-out;
+  padding: .25rem;
+  font-size: .875rem;
+}
+
+.dropdown-item:hover {
+  background-color: var(--_dropdown-item-background);
+}
+
+body[class="dark"] .dropdown-item {
+  color: var(--uns-gray-50);
+}
+
+body[class="dark"] .dropdown-item:hover {
+  --dropdown-item-background: var(--uns-gray);
+}
+
+.dropdown-item::selection {
+  background-color: var(--uns-primary);
+}

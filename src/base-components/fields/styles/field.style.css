@@ -1,0 +1,86 @@
+.base-field {
+  --_field-backgorund: var(--field-background);
+  --_field-color: var(--field-color);
+  --_field-caret-color: var(--field-caret-color);
+  --_field-font-size: var(--field-font-size, 0.875rem);
+  --_field-ring-color: var(--field-ring-color, --uns-gray-300);
+  --_field-ring-width: var(--field-ring-width, .0625rem);
+  --_field-borde-radius: var(--field-border-radius, .375rem);
+  padding: .375rem .625rem;
+  border: .0625rem solid transparent;
+  transition: box-shadow 200ms ease-in-out;
+  color: var(--_field-color);
+  caret-color: var(--_field-caret-color);
+  background-color: var(--_field-backgorund);
+  font-size: var(--_field-font-size);
+  border-radius: var(--_field-borde-radius);
+}
+
+.field-primary {
+  --field-ring-color: var(--uns-gray-300);
+  --field-background: var(--uns-light);
+  --field-color: var(--uns-black);
+  --field-caret-color: var(--uns-indigo-700);
+  box-shadow: 0 0 0 var(--_field-ring-width) var(--_field-ring-color);
+}
+
+.field-secondary {
+  --field-background: var(--uns-gray-300);
+  --field-color: var(--uns-black);
+  --field-caret-color: var(--uns-black);
+}
+
+body[class~="dark"] .field-primary {
+  --field-ring-color: var(--uns-gray-400);
+  --field-background: var(--uns-gray);
+  --field-color: var(--uns-gray-50);
+  --field-caret-color: var(--uns-indigo-50);
+  box-shadow: 0 0 0 var(--_field-ring-width) var(--_field-ring-color);
+}
+
+body[class~="dark"] .field-secondary {
+  --field-background: var(--uns-gray);
+  --field-color: var(--uns-gray-50);
+  --field-caret-color: var(--uns-gray-50):
+}
+
+/* Font styles */
+
+.base-field--size-sm {
+  --field-font-size: .875rem;
+}
+
+.base-field--size-base {
+  --field-font-size: 1rem;
+}
+
+.base-field--size-lg {
+  --field-font-size: 1.125rem;
+}
+
+/* Border styles */
+
+.base-field--rounded-sm {
+  --field-border-radius: .125rem;
+}
+
+.base-field--rounded-md {
+  --field-border-radius: .375rem;
+}
+
+.base-field--rounded-lg {
+  --field-border-radius: .5rem;
+}
+
+.base-field--rounded-full {
+  --field-border-radius: 999rem;
+}
+
+.base-field:focus {
+  --field-ring-width: .125rem;
+  outline: none;
+}
+
+.base-field::selection {
+  background-color: var(--_field-ring-color);
+}
