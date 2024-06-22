@@ -1,0 +1,55 @@
+.dropdown-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu__button {
+  gap: .250rem; /* Small gap between title and icon */
+}
+
+.dropdown-menu__icon {
+  font-size: inherit;
+  transition: transform 0.3s;
+}
+
+.dropdown-menu__icon--rotate {
+  transform: rotate(-180deg);
+}
+
+.dropdown-menu__list {
+  position: absolute;
+  width: max-content;
+}
+
+.dropdown-menu__list--hidden {
+  display: none;
+}
+
+.dropdown-menu__list--bottom {
+  top: 100%;
+  padding-top: .3125rem;
+}
+
+.dropdown-menu__list--top {
+  bottom: 100%;
+  padding-bottom: .3125rem;
+}
+
+.dropdown-menu__list--right {
+  right: 0;
+}
+
+.dropdown-menu__list--transition {
+  animation: showup 300ms ease;
+}
+
+@keyframes showup {
+  from {
+    transform: translateY(8%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%);
+    opacity: 1;
+  }
+}

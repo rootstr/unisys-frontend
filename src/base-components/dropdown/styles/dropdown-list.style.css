@@ -1,0 +1,12 @@
+.dropdown-list {
+  --_dropdown-list-background: var(--dropdown-list-background, #e5e7eb);
+  background-color: var(--_dropdown-list-background);
+  border: .0625rem solid transparent;
+  border-radius: .375rem;
+  padding: .25rem;
+  min-width: 9rem;
+}
+
+body[class="dark"] .dropdown-list {
+  --dropdown-list-background: var(--uns-black);
+}
