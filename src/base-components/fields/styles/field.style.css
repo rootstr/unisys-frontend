@@ -82,5 +82,5 @@ body[class~="dark"] .field-secondary {
 }
 
 .base-field::selection {
-  background-color: var(--_field-ring-color);
+  background-color: var(--uns-indigo-400);
 }
